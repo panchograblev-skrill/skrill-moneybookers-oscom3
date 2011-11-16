@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language>
+  <definitions>
+    <definition>
+      <key>paypal_express_checkout_title</key>
+      <value><![CDATA[PayPal Express Checkout]]></value>
+      <group>modules-payment</group>
+    </definition>
+    <definition>
+      <key>paypal_express_checkout_description</key>
+      <value><![CDATA[PayPal Express Checkout]]></value>
+      <group>modules-payment</group>
+    </definition>
+    <definition>
+      <key>paypal_express_checkout_method_title</key>
+      <value><![CDATA[PayPal Express Checkout]]></value>
+      <group>modules-payment</group>
+    </definition>
+  </definitions>
+</language>
