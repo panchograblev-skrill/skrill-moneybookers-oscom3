@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<language>
+    <definitions>
+        <definition>
+            <key>moneybookers_title</key>
+            <value><![CDATA[Moneybookers e-Wallet]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_description</key>
+            <value><![CDATA[Moneybookers e-Wallet]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_method_title</key>
+            <value><![CDATA[Moneybookers e-Wallet]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_acc_title</key>
+            <value><![CDATA[Moneybookers All Credit Cards]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_acc_description</key>
+            <value><![CDATA[Moneybookers All Credit Cards]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_acc_method_title</key>
+            <value><![CDATA[Moneybookers All Credit Cards]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_obt_title</key>
+            <value><![CDATA[Moneybookers Online Bank Transfer]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_obt_description</key>
+            <value><![CDATA[Moneybookers Online Bank Transfer]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_obt_method_title</key>
+            <value><![CDATA[Moneybookers Online Bank Transfer]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_gir_title</key>
+            <value><![CDATA[Moneybookers Giropay]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_gir_description</key>
+            <value><![CDATA[Moneybookers Giropay]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_gir_method_title</key>
+            <value><![CDATA[Moneybookers Giropay]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_did_title</key>
+            <value><![CDATA[Moneybookers Direct Debit / ELV]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_did_description</key>
+            <value><![CDATA[Moneybookers Direct Debit / ELV]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_did_method_title</key>
+            <value><![CDATA[Moneybookers Direct Debit / ELV]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_sft_title</key>
+            <value><![CDATA[Moneybookers Sofortueberweisung]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_sft_description</key>
+            <value><![CDATA[Moneybookers Sofortueberweisung]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_sft_method_title</key>
+            <value><![CDATA[Moneybookers Sofortueberweisung]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_ent_title</key>
+            <value><![CDATA[Moneybookers eNETS]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_ent_description</key>
+            <value><![CDATA[Moneybookers eNETS]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_ent_method_title</key>
+            <value><![CDATA[Moneybookers eNETS]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_ebt_title</key>
+            <value><![CDATA[Moneybookers Nordea Solo (Sweden)]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_ebt_description</key>
+            <value><![CDATA[Moneybookers Nordea Solo (Sweden)]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_ebt_method_title</key>
+            <value><![CDATA[Moneybookers Nordea Solo (Sweden)]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_so2_title</key>
+            <value><![CDATA[Moneybookers Nordea Solo (Finland)]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_so2_description</key>
+            <value><![CDATA[Moneybookers Nordea Solo (Finland)]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_so2_method_title</key>
+            <value><![CDATA[Moneybookers Nordea Solo (Finland)]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_idl_title</key>
+            <value><![CDATA[Moneybookers iDEAL]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_idl_description</key>
+            <value><![CDATA[Moneybookers iDEAL]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_idl_method_title</key>
+            <value><![CDATA[Moneybookers iDEAL]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_npy_title</key>
+            <value><![CDATA[Moneybookers EPS (Netpay)]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_npy_description</key>
+            <value><![CDATA[Moneybookers EPS (Netpay)]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_npy_method_title</key>
+            <value><![CDATA[Moneybookers EPS (Netpay)]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_pli_title</key>
+            <value><![CDATA[Moneybookers POLi]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_pli_description</key>
+            <value><![CDATA[Moneybookers POLi]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_pli_method_title</key>
+            <value><![CDATA[Moneybookers POLi]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_pwi_title</key>
+            <value><![CDATA[Moneybookers All Polish Banks]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_pwi_description</key>
+            <value><![CDATA[Moneybookers All Polish Banks]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_pwi_method_title</key>
+            <value><![CDATA[Moneybookers All Polish Banks]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_epy_title</key>
+            <value><![CDATA[Moneybookers ePay Bulgaria]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_epy_description</key>
+            <value><![CDATA[Moneybookers ePay Bulgaria]]></value>
+            <group>modules-payment</group>
+        </definition>
+        <definition>
+            <key>moneybookers_epy_method_title</key>
+            <value><![CDATA[Moneybookers ePay Bulgaria]]></value>
+            <group>modules-payment</group>
+        </definition>
+    </definitions>
+</language>
