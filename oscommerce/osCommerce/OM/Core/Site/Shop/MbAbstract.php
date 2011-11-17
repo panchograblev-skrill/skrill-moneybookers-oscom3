@@ -94,21 +94,7 @@ abstract class MbAbstract extends \osCommerce\OM\Core\Site\Shop\PaymentModuleAbs
      */
     protected function _paymentPaymentStatus()
     {
-        $this->_order_id = $_POST['transaction_id'];
-        $merchant_sig = $_POST['merchant_id'] . 
-                        $_POST['transaction_id'] . 
-                        strtoupper(md5( MODULE_PAYMENT_MONEYBOOKERS_SECRET_WORD )) . 
-                        $_POST['mb_amount'] . 
-                        $_POST['mb_currency'] . 
-                        $_POST['status'];
-		
-	$merchant_sig = strtoupper(md5($merchant_sig));
-	$mb_sig = isset($_POST['md5sig']) ? $_POST['md5sig'] : '';
-	
-	if ( $mb_sig === $merchant_sig && $_POST['status'] == '2' )
-            Order::process($this->_order_id, $this->_order_status);
         
-        file_put_contents("status.txt", print_r($_POST, true), FILE_APPEND);
 
         //unset($_SESSION['Shop']['PM']['MONEYBOOKERS']);
     }
@@ -150,7 +136,7 @@ abstract class MbAbstract extends \osCommerce\OM\Core\Site\Shop\PaymentModuleAbs
         $this->_params['pay_from_email'] = $OSCOM_Customer->getEmailAddress();
         $this->_params['return_url'] = OSCOM::getLink(null, null, 'Success', 'SSL');
         $this->_params['cancel_url'] = OSCOM::getLink(null, 'Checkout', 'action=cancel', 'SSL');
-        $this->_params['status_url'] = OSCOM::getLink(null, 'Checkout', 'action=status', 'SSL');
+        $this->_params['status_url'] = OSCOM::getLink(null, 'MBPayment', 'Status&action=status', 'SSL');
 
         $line_item_no = 0;
         $items_total = 0;
