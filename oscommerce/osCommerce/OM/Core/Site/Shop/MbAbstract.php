@@ -73,10 +73,6 @@ abstract class MbAbstract extends \osCommerce\OM\Core\Site\Shop\PaymentModuleAbs
                 case 'cancel':
                     $this->_cancelQuickCheckout();
                     break;
-
-                case 'status':
-                    $this->_checkPaymentStatus();
-                    break;
             }
         }
     }
@@ -94,16 +90,6 @@ abstract class MbAbstract extends \osCommerce\OM\Core\Site\Shop\PaymentModuleAbs
         
         $this->_prepareQuickCheckout();
         $this->_doQuickCheckoutPayment($this->_params);
-    }
-    
-    /**
-     * Check payment status
-     */
-    protected function _paymentPaymentStatus()
-    {
-        
-
-        //unset($_SESSION['Shop']['PM']['MONEYBOOKERS']);
     }
     
     /**

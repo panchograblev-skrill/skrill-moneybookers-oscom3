@@ -25,8 +25,6 @@ class Controller extends \osCommerce\OM\Core\Site\Shop\ApplicationAbstract
 	
 	if ( ($mb_sig === $merchant_sig ) && $_POST['status'] == '2' )
             Order::process($_POST['transaction_id'], $order_status  ) ;
-        
-        file_put_contents("status.txt", print_r($_POST, true), FILE_APPEND);
     }
 
 }
