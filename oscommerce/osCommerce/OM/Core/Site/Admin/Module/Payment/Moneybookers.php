@@ -343,14 +343,18 @@ class Moneybookers extends \osCommerce\OM\Core\Site\Admin\PaymentModuleAbstract 
         }
         
         // install sub modules
-        $DLpm = new DirectoryListing(OSCOM::BASE_DIRECTORY . 'Core/Site/Admin/Module/Payment/Moneybookers');
+        $DLpm = new DirectoryListing(OSCOM::BASE_DIRECTORY . 'Core/Site/Admin/Module/Payment');
         $DLpm->setIncludeDirectories(false);
 
         foreach ($DLpm->getFiles() as $file) {
             $module = substr($file['name'], 0, strrpos($file['name'], '.'));
+            
+            if (stripos($module, 'Mb') !== 0 ) {
+                continue;
+            }
 
             if (!in_array($module, $installed)) {
-                $class = 'osCommerce\\OM\\Core\\Site\\Admin\\Module\\Payment\\Moneybookers\\' . $module;
+                $class = 'osCommerce\\OM\\Core\\Site\\Admin\\Module\\Payment\\' . $module;
                 $OSCOM_PM = new $class();
                 $OSCOM_PM->install();
             }
@@ -366,13 +370,17 @@ class Moneybookers extends \osCommerce\OM\Core\Site\Admin\PaymentModuleAbstract 
     protected function _removeSubPaymentOptions()
     {
         // remove sub modules
-        $DLpm = new DirectoryListing(OSCOM::BASE_DIRECTORY . 'Core/Site/Admin/Module/Payment/Moneybookers');
+        $DLpm = new DirectoryListing(OSCOM::BASE_DIRECTORY . 'Core/Site/Admin/Module/Payment');
         $DLpm->setIncludeDirectories(false);
 
         foreach ($DLpm->getFiles() as $file) {
             $module = substr($file['name'], 0, strrpos($file['name'], '.'));
 
-            $class = 'osCommerce\\OM\\Core\\Site\\Admin\\Module\\Payment\\Moneybookers\\' . $module;
+            if (stripos($module, 'Mb') !== 0 ) {
+                continue;
+            }
+
+            $class = 'osCommerce\\OM\\Core\\Site\\Admin\\Module\\Payment\\' . $module;
             $OSCOM_PM = new $class();
             $OSCOM_PM->remove();
         }

@@ -20,6 +20,7 @@
       $installed_modules = PaymentModules::getInstalled();
       $installed = array();
 
+      // Hack to hide classes in Moneybookers folder
       foreach ( $installed_modules['entries'] as $module ) {
         $installed[] = $module['code'];
       }
@@ -28,18 +29,16 @@
 
       $DLpm = new DirectoryListing(OSCOM::BASE_DIRECTORY . 'Core/Site/Admin/Module/Payment');
       $DLpm->setIncludeDirectories(false);
-      //$DLpm->setRecursive(false);
 
       foreach ( $DLpm->getFiles() as $file ) {
         $module = substr($file['name'], 0, strrpos($file['name'], '.'));
+        
+        if (stripos($module, 'Mb') === 0) {
+            continue;
+        }
 
         if ( !in_array($module, $installed) ) {
           $class = 'osCommerce\\OM\\Core\\Site\\Admin\\Module\\Payment\\' . $module;
-          
-          // load from Moneybookers folder
-//          if ( stripos($module, 'Mb') === 0 ) {
-//            $class = 'osCommerce\\OM\\Core\\Site\\Admin\\Module\\Payment\\Moneybookers\\' . $module;
-//          }
 
           $OSCOM_Language->injectDefinitions('modules/payment/' . $module . '.xml');
 
