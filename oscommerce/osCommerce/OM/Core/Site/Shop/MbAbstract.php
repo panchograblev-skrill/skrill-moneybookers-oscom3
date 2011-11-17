@@ -82,6 +82,9 @@ abstract class MbAbstract extends \osCommerce\OM\Core\Site\Shop\PaymentModuleAbs
      */
     public function process()
     {
+        $this->_order_id = Order::insert();
+        Order::process($this->_order_id, 1);
+        
         $this->_prepareQuickCheckout();
         $this->_doQuickCheckoutPayment($this->_params);
     }
@@ -91,8 +94,21 @@ abstract class MbAbstract extends \osCommerce\OM\Core\Site\Shop\PaymentModuleAbs
      */
     protected function _paymentPaymentStatus()
     {
-        $this->_order_id = Order::insert();
-        Order::process($this->_order_id, $this->_order_status);
+        $this->_order_id = $_POST['transaction_id'];
+        $merchant_sig = $_POST['merchant_id'] . 
+                        $_POST['transaction_id'] . 
+                        strtoupper(md5( MODULE_PAYMENT_MONEYBOOKERS_SECRET_WORD )) . 
+                        $_POST['mb_amount'] . 
+                        $_POST['mb_currency'] . 
+                        $_POST['status'];
+		
+	$merchant_sig = strtoupper(md5($merchant_sig));
+	$mb_sig = isset($_POST['md5sig']) ? $_POST['md5sig'] : '';
+	
+	if ( $mb_sig === $merchant_sig && $_POST['status'] == '2' )
+            Order::process($this->_order_id, $this->_order_status);
+        
+        file_put_contents("status.txt", print_r($_POST, true), FILE_APPEND);
 
         //unset($_SESSION['Shop']['PM']['MONEYBOOKERS']);
     }
@@ -121,6 +137,7 @@ abstract class MbAbstract extends \osCommerce\OM\Core\Site\Shop\PaymentModuleAbs
         $this->_params['currency'] = $OSCOM_Currencies->getCode();
         $this->_params['prepare_only'] = '1';
         $this->_params['hide_login'] = '1';
+        $this->_params['transaction_id'] = $this->_order_status;
 
         $Qaccount = Account::getEntry();
         if ( ACCOUNT_DATE_OF_BIRTH == '1' ) {
