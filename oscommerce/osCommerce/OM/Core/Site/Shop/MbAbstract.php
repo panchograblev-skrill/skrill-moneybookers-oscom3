@@ -33,6 +33,13 @@ abstract class MbAbstract extends \osCommerce\OM\Core\Site\Shop\PaymentModuleAbs
     protected $_allowedCountries = array();
     
     /**
+     * Order Id
+     * 
+     * @var int
+     */
+    protected $_order_id = null;
+    
+    /**
      * initialize
      */
     protected function initialize()
@@ -123,7 +130,7 @@ abstract class MbAbstract extends \osCommerce\OM\Core\Site\Shop\PaymentModuleAbs
         $this->_params['currency'] = $OSCOM_Currencies->getCode();
         $this->_params['prepare_only'] = '1';
         $this->_params['hide_login'] = '1';
-        $this->_params['transaction_id'] = $this->_order_status;
+        $this->_params['transaction_id'] = $this->_order_id;
 
         $Qaccount = Account::getEntry();
         if ( ACCOUNT_DATE_OF_BIRTH == '1' ) {
