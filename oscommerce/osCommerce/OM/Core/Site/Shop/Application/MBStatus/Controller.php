@@ -12,6 +12,8 @@ class Controller extends \osCommerce\OM\Core\Site\Shop\ApplicationAbstract
     protected function process()
     {
         Registry::get('Language')->set($_POST['store_language']);
+        Registry::get('Language')->load('checkout');
+        Registry::get('Language')->load('order');
         
         $merchant_sig = $_POST['merchant_id'] . 
                         $_POST['transaction_id'] . 
