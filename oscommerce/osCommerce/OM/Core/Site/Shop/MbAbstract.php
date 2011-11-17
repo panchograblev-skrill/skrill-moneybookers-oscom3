@@ -136,7 +136,7 @@ abstract class MbAbstract extends \osCommerce\OM\Core\Site\Shop\PaymentModuleAbs
         $this->_params['pay_from_email'] = $OSCOM_Customer->getEmailAddress();
         $this->_params['return_url'] = OSCOM::getLink(null, null, 'Success', 'SSL');
         $this->_params['cancel_url'] = OSCOM::getLink(null, 'Checkout', 'action=cancel', 'SSL');
-        $this->_params['status_url'] = OSCOM::getLink(null, 'MBPayment', 'Status&action=status', 'SSL');
+        $this->_params['status_url'] = OSCOM::getLink(null, 'MBStatus', null, 'SSL');
 
         $line_item_no = 0;
         $items_total = 0;
