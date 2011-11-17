@@ -3,6 +3,7 @@
 namespace osCommerce\OM\Core\Site\Shop\Application\MBStatus;
 
 use osCommerce\OM\Core\Site\Shop\Order;
+use osCommerce\OM\Core\Registry;
 
 class Controller extends \osCommerce\OM\Core\Site\Shop\ApplicationAbstract
 {
@@ -10,6 +11,8 @@ class Controller extends \osCommerce\OM\Core\Site\Shop\ApplicationAbstract
 
     protected function process()
     {
+        Registry::get('Language')->set($_POST['store_language']);
+        
         $merchant_sig = $_POST['merchant_id'] . 
                         $_POST['transaction_id'] . 
                         strtoupper(md5( MODULE_PAYMENT_MONEYBOOKERS_SECRET_WORD )) . 

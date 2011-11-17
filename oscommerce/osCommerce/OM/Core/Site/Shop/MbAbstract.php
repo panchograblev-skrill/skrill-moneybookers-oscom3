@@ -117,6 +117,8 @@ abstract class MbAbstract extends \osCommerce\OM\Core\Site\Shop\PaymentModuleAbs
         $this->_params['prepare_only'] = '1';
         $this->_params['hide_login'] = '1';
         $this->_params['transaction_id'] = $this->_order_id;
+        $this->_params['merchant_fields'] = 'store_language';
+        $this->_params['store_language'] = Registry::get('Language')->getCode();
 
         $Qaccount = Account::getEntry();
         if ( ACCOUNT_DATE_OF_BIRTH == '1' ) {
