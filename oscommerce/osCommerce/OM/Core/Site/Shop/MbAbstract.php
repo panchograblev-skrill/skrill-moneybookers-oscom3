@@ -40,14 +40,26 @@ abstract class MbAbstract extends \osCommerce\OM\Core\Site\Shop\PaymentModuleAbs
     protected $_order_id = null;
     
     /**
+     * Logo name
+     * 
+     * @var string
+     */
+    protected $_image_name = null;
+    
+    /**
      * initialize
      */
     protected function initialize()
     {
         $this->_mb_code = str_replace('Mb', '', $this->_code);
         
-        $this->_title = '<img src="http://www.moneybookers.com/ads/skrill-brand-centre/resources/images/plain-four-versions-rgb_168x45.gif" /> ' . OSCOM::getDef('moneybookers_' . strtolower($this->_mb_code) . '_title');
-        $this->_method_title =  '<img src="http://www.moneybookers.com/ads/skrill-brand-centre/resources/images/plain-four-versions-rgb_168x45.gif" /> ' . OSCOM::getDef('moneybookers_' . strtolower($this->_mb_code) . '_description');
+        $image_url = '';
+        if ( strlen($this->_image_name) ) {
+            $image_url = '<img src="' . OSCOM::getPublicSiteLink('images/skrill/payment-options/' . $this->_image_name, null, 'Shop') . '" /> ';
+        }
+        
+        $this->_title = $image_url . OSCOM::getDef('moneybookers_' . strtolower($this->_mb_code) . '_title');
+        $this->_method_title = $image_url . OSCOM::getDef('moneybookers_' . strtolower($this->_mb_code) . '_description');
         
         $this->_status = ( constant('MODULE_PAYMENT_MONEYBOOKERS_' . $this->_mb_code) == '1') ? true : false;
         $this->_sort_order = constant('MODULE_PAYMENT_MONEYBOOKERS_' . $this->_mb_code . '_SORT_ORDER');

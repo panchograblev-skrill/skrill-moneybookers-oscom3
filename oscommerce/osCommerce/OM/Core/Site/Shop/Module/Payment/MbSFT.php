@@ -8,4 +8,6 @@ class MbSFT extends \osCommerce\OM\Core\Site\Shop\MbAbstract
         'DEU', 'GBR', 'BEL', 
         'CHE', 'AUT', 'NLD',
     );
+    
+    protected $_image_name = 'sofort-by-mb.gif';
 }

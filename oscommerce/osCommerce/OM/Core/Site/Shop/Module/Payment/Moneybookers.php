@@ -7,6 +7,8 @@ use osCommerce\OM\Core\Registry;
 
 class Moneybookers extends \osCommerce\OM\Core\Site\Shop\MbAbstract
 {
+    protected $_image_name = 'digitalwallet-rgb.gif';
+    
     /**
      * initialise 
      */
@@ -14,9 +16,14 @@ class Moneybookers extends \osCommerce\OM\Core\Site\Shop\MbAbstract
     {
         $OSCOM_PDO = Registry::get('PDO');
         $OSCOM_ShoppingCart = Registry::get('ShoppingCart');
+        
+        $image_url = '';
+        if ( strlen($this->_image_name) ) {
+            $image_url = '<img src="' . OSCOM::getPublicSiteLink('images/skrill/payment-options/' . $this->_image_name, null, 'Shop') . '" /> ';
+        }
 
-        $this->_title = OSCOM::getDef('moneybookers_title');
-        $this->_method_title = OSCOM::getDef('moneybookers_method_title');
+        $this->_title = $image_url . OSCOM::getDef('moneybookers_title');
+        $this->_method_title = $image_url . OSCOM::getDef('moneybookers_method_title');
         $this->_status = (MODULE_PAYMENT_MONEYBOOKERS_STATUS == '1') ? true : false;
         $this->_sort_order = MODULE_PAYMENT_MONEYBOOKERS_SORT_ORDER;
 

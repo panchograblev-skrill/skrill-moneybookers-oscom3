@@ -9,4 +9,6 @@ class MbOBT extends \osCommerce\OM\Core\Site\Shop\MbAbstract
         'FIN', 'SWE', 'POL',
         'EST', 'LVA', 'LTU'
     );
+    
+    protected $_image_name = 'obt-en-by-mb.gif';
 }
