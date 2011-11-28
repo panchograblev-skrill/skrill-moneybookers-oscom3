@@ -1,0 +1,17 @@
+html, body {background-color: #ffffff; text-align: center; margin: 0 auto;
+scrollbar-face-color: #red;}
+td {color: #000000; }
+a:link { color: #red; text-decoration: none; }
+a:visited {color: #orange; text-decoration: none; }
+a:hover { color: #grey; text-decoration: underline; }
+a:active { color: #orange; text-decoration: none; }
+.bar {background-color: #ffffff;}
+.frm_box { border-style:ridge; border-width:1; border-color:orange; font-size:
+13px; background-color: #ffffff; font-style:normal; font-
+variant:normal; font-weight:normal; color:#000000; margin-
+left:4px;margin-right:4px; padding-left:4px; padding-right:4px;
+padding-top:1; padding-bottom:1; }
+.tab {background-color:#ffffff; border-style: none;}
+#addressBlock { display: none; }
+#userInfoBlock { display: none; }
+#contactBlock { display: none; }
